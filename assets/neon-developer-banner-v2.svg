@@ -50,29 +50,59 @@
 </g>
 
 <!-- left developer scene -->
-<g transform="translate(42 92)">
-  <path d="M20 330 Q42 226 105 196 Q152 174 200 196 Q263 226 286 330Z" fill="url(#hoodie)" stroke="#22D3EE" stroke-opacity=".45" stroke-width="3"/>
-  <path d="M100 207 L153 280 L206 207 L194 330 H112Z" fill="#0B1228"/>
-  <path d="M126 225 L153 257 L180 225" fill="none" stroke="#38BDF8" stroke-width="3" opacity=".8"/>
-  <rect x="143" y="262" width="20" height="40" rx="7" fill="#22D3EE" opacity=".7" filter="url(#glow)"/>
+<g transform="translate(40 86)">
+  <!-- shoulders / hoodie, matching the second reference -->
+  <path d="M18 338 Q30 252 91 210 Q122 190 154 190 Q186 190 217 210 Q278 252 290 338Z" fill="url(#hoodie)" stroke="#22D3EE" stroke-opacity=".55" stroke-width="3"/>
+  <path d="M92 211 Q124 236 154 273 Q184 236 216 211 L206 338 H102Z" fill="#091226"/>
+  <path d="M113 216 Q136 242 154 264 Q172 242 195 216" fill="none" stroke="#60A5FA" stroke-width="3" opacity=".9"/>
+  <path d="M121 221 Q132 211 142 210 L154 225 L166 210 Q176 211 187 221" fill="none" stroke="#E2E8F0" stroke-opacity=".9" stroke-width="4"/>
+  <path d="M123 236 L154 279 L185 236" fill="none" stroke="#22D3EE" stroke-opacity=".42" stroke-width="2"/>
+  <path d="M153 277 V321" stroke="#1D4ED8" stroke-width="4" opacity=".8"/>
+  <path d="M40 331 Q48 270 92 231" fill="none" stroke="#22D3EE" stroke-width="5" stroke-opacity=".7"/>
+  <path d="M268 331 Q260 270 216 231" fill="none" stroke="#A78BFA" stroke-width="5" stroke-opacity=".55"/>
+
   <!-- neck -->
-  <path d="M135 164 H172 V203 Q153 218 135 203Z" fill="url(#skin)"/>
-  <!-- head -->
-  <path d="M105 86 Q109 24 153 18 Q197 24 201 86 L193 143 Q181 169 153 173 Q125 169 113 143Z" fill="url(#skin)" stroke="#F3B08E" stroke-opacity=".35"/>
-  <!-- hair -->
-  <path d="M105 88 Q98 28 153 10 Q208 28 201 88 Q187 61 173 53 Q141 72 108 62Z" fill="#111827"/>
-  <path d="M112 56 Q127 20 157 19 Q186 21 198 54 Q173 41 151 47 Q130 54 112 56Z" fill="#1F2937"/>
+  <path d="M132 166 H176 V208 Q154 222 132 208Z" fill="url(#skin)"/>
+  <path d="M135 181 Q154 194 173 181" fill="none" stroke="#9A5C49" stroke-opacity=".45" stroke-width="3"/>
+
+  <!-- face -->
+  <path d="M103 82 Q105 31 154 20 Q203 31 205 82 L196 147 Q188 174 154 183 Q120 174 112 147Z" fill="url(#skin)" stroke="#F0B192" stroke-opacity=".42" stroke-width="2"/>
+
   <!-- ears -->
-  <path d="M106 91 Q94 88 94 103 Q97 116 108 113 M200 91 Q212 88 212 103 Q209 116 198 113" fill="url(#skin)"/>
+  <path d="M106 91 Q94 88 94 105 Q97 120 109 116" fill="url(#skin)" stroke="#B96E54" stroke-width="1"/>
+  <path d="M202 91 Q214 88 214 105 Q211 120 199 116" fill="url(#skin)" stroke="#B96E54" stroke-width="1"/>
+
+  <!-- hair: thick, rounded, slightly side-swept -->
+  <path d="M102 94 Q92 30 151 11 Q209 24 206 94 Q192 72 176 61 Q151 72 130 62 Q115 56 103 66Z" fill="#0B1020"/>
+  <path d="M106 62 Q124 25 157 25 Q184 28 200 56 Q174 44 151 51 Q128 57 106 62Z" fill="#172033"/>
+  <path d="M119 39 Q143 17 175 30" fill="none" stroke="#26334A" stroke-width="5" stroke-linecap="round" opacity=".55"/>
+  
+  <!-- brows -->
+  <path d="M118 92 Q130 84 142 91" fill="none" stroke="#4B302A" stroke-width="4" stroke-linecap="round"/>
+  <path d="M166 91 Q178 84 190 92" fill="none" stroke="#4B302A" stroke-width="4" stroke-linecap="round"/>
+
   <!-- eyes -->
-  <ellipse cx="130" cy="95" rx="7" ry="5" fill="#111827"/><ellipse cx="176" cy="95" rx="7" ry="5" fill="#111827"/>
-  <circle cx="130" cy="95" r="2" fill="#fff"/><circle cx="176" cy="95" r="2" fill="#fff"/>
-  <path d="M143 111 Q153 117 163 111" fill="none" stroke="#9A5148" stroke-width="2.5" stroke-linecap="round"/>
-  <path d="M138 129 Q153 140 168 129" fill="none" stroke="#6F3E3B" stroke-width="3" stroke-linecap="round"/>
-  <!-- hoodie highlight -->
-  <path d="M24 330 Q39 243 91 215" fill="none" stroke="#22D3EE" stroke-opacity=".8" stroke-width="5"/>
-  <path d="M264 330 Q249 243 215 215" fill="none" stroke="#7C3AED" stroke-opacity=".55" stroke-width="5"/>
-  <text x="153" y="356" text-anchor="middle" fill="#67E8F9" font-family="monospace" font-size="11" letter-spacing="2">BUILD • LEARN • IMPROVE</text>
+  <ellipse cx="130" cy="101" rx="8" ry="6" fill="#241A18"/><ellipse cx="178" cy="101" rx="8" ry="6" fill="#241A18"/>
+  <ellipse cx="130" cy="101" rx="3" ry="3" fill="#fff"/><ellipse cx="178" cy="101" rx="3" ry="3" fill="#fff"/>
+  <circle cx="131" cy="101" r="1.2" fill="#111827"/><circle cx="179" cy="101" r="1.2" fill="#111827"/>
+
+  <!-- nose -->
+  <path d="M154 101 Q149 116 151 123 Q154 126 160 123" fill="none" stroke="#AD654F" stroke-width="2.5" stroke-linecap="round"/>
+  <path d="M147 125 Q154 128 161 125" fill="none" stroke="#995A49" stroke-width="1.8" stroke-linecap="round"/>
+
+  <!-- moustache and mouth -->
+  <path d="M143 137 Q151 132 154 137 Q157 132 165 137 Q158 147 154 144 Q150 147 143 137Z" fill="#4B2A28" opacity=".9"/>
+  <path d="M146 151 Q154 157 162 151" fill="none" stroke="#7B4038" stroke-width="2.7" stroke-linecap="round"/>
+
+  <!-- subtle face highlight -->
+  <path d="M122 124 Q128 132 134 136" fill="none" stroke="#FFD1B8" stroke-opacity=".22" stroke-width="4" stroke-linecap="round"/>
+  <path d="M187 120 Q181 128 175 133" fill="none" stroke="#8F4D3B" stroke-opacity=".22" stroke-width="4" stroke-linecap="round"/>
+
+  <!-- neon identity marker -->
+  <circle cx="222" cy="62" r="5" fill="#34D399" filter="url(#glow)">
+    <animate attributeName="opacity" values="1;.15;1" dur="1.2s" repeatCount="indefinite"/>
+  </circle>
+  <text x="154" y="357" text-anchor="middle" fill="#67E8F9" font-family="monospace" font-size="11" letter-spacing="2">BUILD • LEARN • IMPROVE</text>
 </g>
 
 <!-- laptop -->
