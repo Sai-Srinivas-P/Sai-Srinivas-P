@@ -49,73 +49,78 @@
   <circle cx="1370" cy="48" r="5" fill="#34D399" filter="url(#glow)"><animate attributeName="opacity" values="1;.2;1" dur="1.1s" repeatCount="indefinite"/></circle>
 </g>
 
-<!-- left futuristic developer avatar -->
+<!-- left youthful futuristic developer avatar -->
 <g transform="translate(40 86)">
   <defs>
-    <linearGradient id="avatarSuit" x1="0" y1="0" x2="1" y2="1">
-      <stop stop-color="#0F172A"/><stop offset=".45" stop-color="#172554"/><stop offset="1" stop-color="#020617"/>
+    <linearGradient id="avatarSuitYoung" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#172554"/><stop offset=".5" stop-color="#0F172A"/><stop offset="1" stop-color="#020617"/>
     </linearGradient>
-    <linearGradient id="avatarSkin" x1="0" y1="0" x2="1" y2="1">
-      <stop stop-color="#F1C27D"/><stop offset=".55" stop-color="#D08A62"/><stop offset="1" stop-color="#8E563F"/>
+    <linearGradient id="avatarSkinYoung" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#FFD1B5"/><stop offset=".5" stop-color="#E9A27F"/><stop offset="1" stop-color="#B96E58"/>
     </linearGradient>
   </defs>
 
   <ellipse cx="154" cy="334" rx="128" ry="20" fill="#22D3EE" opacity=".14" filter="url(#softglow)"/>
 
-  <!-- jacket -->
-  <path d="M20 338 Q35 245 88 212 Q120 194 154 194 Q188 194 220 212 Q273 245 288 338Z"
-        fill="url(#avatarSuit)" stroke="#38BDF8" stroke-width="3" stroke-opacity=".7"/>
-  <path d="M91 213 Q119 245 154 278 Q189 245 217 213 L204 338 H104Z"
-        fill="#081225"/>
-  <path d="M116 222 L154 273 L192 222" fill="none" stroke="#60A5FA" stroke-width="3"/>
-  <path d="M126 235 L154 269 L182 235" fill="none" stroke="#22D3EE" stroke-width="2" opacity=".6"/>
+  <!-- hoodie -->
+  <path d="M22 338 Q30 256 86 216 Q119 194 154 194 Q189 194 222 216 Q278 256 286 338Z"
+        fill="url(#avatarSuitYoung)" stroke="#22D3EE" stroke-width="3" stroke-opacity=".7"/>
+  <path d="M92 214 Q122 246 154 276 Q186 246 216 214 L204 338 H104Z"
+        fill="#091226"/>
+  <path d="M112 224 Q130 248 154 270 Q178 248 196 224" fill="none" stroke="#60A5FA" stroke-width="3"/>
+  <path d="M128 238 L154 270 L180 238" fill="none" stroke="#22D3EE" stroke-width="2" opacity=".7"/>
 
-  <!-- collar -->
-  <path d="M122 214 L154 261 L186 214" fill="none" stroke="#CBD5E1" stroke-width="5" stroke-linecap="round"/>
-  <path d="M145 257 H163 V312 H145Z" fill="#0B1220"/>
-  <path d="M146 270 H162 V286 H146Z" fill="#22D3EE" opacity=".6"/>
+  <!-- hoodie strings -->
+  <path d="M133 230 Q129 254 133 272" fill="none" stroke="#CBD5E1" stroke-width="3" stroke-linecap="round"/>
+  <path d="M175 230 Q179 254 175 272" fill="none" stroke="#CBD5E1" stroke-width="3" stroke-linecap="round"/>
+  <circle cx="133" cy="273" r="3" fill="#22D3EE"/>
+  <circle cx="175" cy="273" r="3" fill="#22D3EE"/>
 
   <!-- neck -->
-  <path d="M132 166 H176 V208 Q154 221 132 208Z" fill="url(#avatarSkin)"/>
+  <path d="M135 168 H173 V207 Q154 219 135 207Z" fill="url(#avatarSkinYoung)"/>
 
-  <!-- head -->
-  <path d="M104 78 Q108 30 154 18 Q200 30 204 78 L197 145 Q187 173 154 181 Q121 173 111 145Z"
-        fill="url(#avatarSkin)" stroke="#F8C49B" stroke-opacity=".35" stroke-width="2"/>
+  <!-- youthful face -->
+  <path d="M108 80 Q110 34 154 22 Q198 34 200 80 L194 144 Q186 173 154 181 Q122 173 114 144Z"
+        fill="url(#avatarSkinYoung)" stroke="#F8C4A7" stroke-opacity=".35" stroke-width="2"/>
 
-  <!-- hair -->
-  <path d="M103 88 Q96 31 148 10 Q202 20 207 87 Q190 60 170 51 Q146 62 128 55 Q115 51 103 60Z"
+  <!-- modern textured hair -->
+  <path d="M106 87 Q96 41 121 22 Q139 7 164 12 Q194 16 204 50 Q208 68 201 88 Q186 66 169 58 Q150 65 130 61 Q117 58 106 66Z"
         fill="#0B1020"/>
-  <path d="M111 48 Q135 19 165 22 Q190 25 201 50 Q177 38 154 43 Q132 49 111 48Z"
-        fill="#1F2937"/>
+  <path d="M112 44 Q128 20 153 19 Q181 18 197 42 Q174 33 156 39 Q136 45 112 44Z"
+        fill="#26324A"/>
+  <path d="M125 30 Q139 17 157 16" fill="none" stroke="#36445E" stroke-width="4" stroke-linecap="round" opacity=".7"/>
 
-  <!-- headset -->
-  <path d="M103 86 Q102 38 154 27 Q206 38 205 86" fill="none" stroke="#22D3EE" stroke-width="5" opacity=".8"/>
-  <rect x="97" y="91" width="14" height="35" rx="7" fill="#111827" stroke="#22D3EE"/>
-  <rect x="197" y="91" width="14" height="35" rx="7" fill="#111827" stroke="#22D3EE"/>
+  <!-- clean brows -->
+  <path d="M119 92 Q130 85 141 91" fill="none" stroke="#56382E" stroke-width="3.5" stroke-linecap="round"/>
+  <path d="M167 91 Q178 85 189 92" fill="none" stroke="#56382E" stroke-width="3.5" stroke-linecap="round"/>
 
-  <!-- eyes -->
-  <ellipse cx="130" cy="99" rx="8" ry="6" fill="#18212F"/>
-  <ellipse cx="178" cy="99" rx="8" ry="6" fill="#18212F"/>
-  <circle cx="132" cy="98" r="2.4" fill="#E0F2FE"/>
-  <circle cx="180" cy="98" r="2.4" fill="#E0F2FE"/>
+  <!-- lively eyes -->
+  <ellipse cx="130" cy="101" rx="8.5" ry="6.5" fill="#1B2430"/>
+  <ellipse cx="178" cy="101" rx="8.5" ry="6.5" fill="#1B2430"/>
+  <circle cx="132" cy="99" r="2.6" fill="#F8FAFC"/>
+  <circle cx="180" cy="99" r="2.6" fill="#F8FAFC"/>
+  <circle cx="132" cy="100" r="1.1" fill="#111827"/>
+  <circle cx="180" cy="100" r="1.1" fill="#111827"/>
 
-  <!-- brows -->
-  <path d="M118 88 Q130 81 142 88" fill="none" stroke="#4B2E25" stroke-width="4" stroke-linecap="round"/>
-  <path d="M166 88 Q178 81 190 88" fill="none" stroke="#4B2E25" stroke-width="4" stroke-linecap="round"/>
+  <!-- small nose -->
+  <path d="M154 101 Q150 115 153 121 Q156 123 160 121" fill="none" stroke="#B56D53" stroke-width="2.2" stroke-linecap="round"/>
 
-  <!-- nose + smile -->
-  <path d="M154 102 Q149 117 153 122 Q157 125 161 121" fill="none" stroke="#A85F46" stroke-width="2.5" stroke-linecap="round"/>
-  <path d="M143 139 Q154 146 165 139" fill="none" stroke="#7B4038" stroke-width="3" stroke-linecap="round"/>
+  <!-- youthful smile, no facial hair -->
+  <path d="M144 139 Q154 146 164 139" fill="none" stroke="#844A40" stroke-width="2.8" stroke-linecap="round"/>
+  <path d="M149 143 Q154 146 159 143" fill="none" stroke="#FFD7C4" stroke-width="1.5" stroke-linecap="round" opacity=".55"/>
 
-  <!-- moustache -->
-  <path d="M143 133 Q151 128 154 134 Q157 128 165 133 Q159 142 154 140 Q149 142 143 133Z" fill="#3F2824"/>
+  <!-- subtle cheek highlights -->
+  <path d="M120 123 Q127 131 134 133" fill="none" stroke="#FFDCC9" stroke-opacity=".25" stroke-width="4" stroke-linecap="round"/>
+  <path d="M188 123 Q181 131 174 133" fill="none" stroke="#9E5A47" stroke-opacity=".18" stroke-width="4" stroke-linecap="round"/>
 
-  <!-- face display accent -->
-  <path d="M121 118 Q132 127 140 128" fill="none" stroke="#FFD7BD" stroke-opacity=".22" stroke-width="4" stroke-linecap="round"/>
+  <!-- neon headset -->
+  <path d="M104 84 Q103 38 154 27 Q205 38 204 84" fill="none" stroke="#38BDF8" stroke-width="5" opacity=".75"/>
+  <rect x="97" y="89" width="14" height="34" rx="7" fill="#111827" stroke="#22D3EE"/>
+  <rect x="197" y="89" width="14" height="34" rx="7" fill="#111827" stroke="#22D3EE"/>
 
-  <!-- glowing chest badge -->
-  <rect x="136" y="292" width="36" height="20" rx="6" fill="#020617" stroke="#22D3EE"/>
-  <text x="154" y="306" text-anchor="middle" fill="#67E8F9" font-family="monospace" font-size="9">DEV</text>
+  <!-- dev badge -->
+  <rect x="136" y="294" width="36" height="20" rx="6" fill="#020617" stroke="#22D3EE"/>
+  <text x="154" y="308" text-anchor="middle" fill="#67E8F9" font-family="monospace" font-size="9">DEV</text>
 
   <circle cx="222" cy="62" r="5" fill="#34D399" filter="url(#glow)">
     <animate attributeName="opacity" values="1;.15;1" dur="1.2s" repeatCount="indefinite"/>
