@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="./assets/name-ultimate.svg" width="96%" alt="Animated SAI SRINIVAS PATIBANDLA neon developer header with 3D avatar"/>
+<img src="./assets/name-ultimate.svg" width="96%" alt="Animated SAI SRINIVAS PATIBANDLA neon software developer portfolio banner"/>
 
 <p align="center"><strong>⚡ Building real projects · 🧠 AI/ML · 🛠️ Full-Stack · ☁️ Backend & Cloud</strong></p>
 
