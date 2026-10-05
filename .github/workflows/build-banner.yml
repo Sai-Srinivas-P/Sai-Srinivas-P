@@ -1,5 +1,5 @@
 name: Build profile banner GIF
-# Source image: assets/DEVELOPER.png
+# Rebuild the new avatar-integrated banner design.
 
 on:
   push:
