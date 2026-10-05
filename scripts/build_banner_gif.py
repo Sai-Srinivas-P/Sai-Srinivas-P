@@ -9,7 +9,7 @@ from PIL import Image, ImageDraw, ImageFilter
 
 ROOT = Path(__file__).resolve().parents[1]
 SVG_PATH = ROOT / "assets" / "neon-developer-banner-v2.svg"
-PHOTO_PATH = ROOT / "assets" / "OFFICE.png"
+PHOTO_PATH = ROOT / "assets" / "DEVELOPER.png"
 OUT_PATH = ROOT / "assets" / "neon-developer-banner.gif"
 
 WIDTH, HEIGHT = 1200, 400
