@@ -25,7 +25,6 @@
   </filter>
   <filter id="softglow" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="14"/></filter>
   <pattern id="grid" width="46" height="46" patternUnits="userSpaceOnUse"><path d="M46 0H0V46" fill="none" stroke="#38BDF8" stroke-opacity=".12"/><circle cx="0" cy="0" r="1" fill="#67E8F9" opacity=".18"/></pattern>
-  <linearGradient id="sweep" x1="0" x2="1"><stop stop-color="#fff" stop-opacity="0"/><stop offset=".48" stop-color="#fff" stop-opacity=".9"><animate attributeName="offset" values=".1;.85;.1" dur="3.2s" repeatCount="indefinite"/></stop><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient>
 </defs>
 
 <rect width="1400" height="467" rx="30" fill="url(#bg)"/>
@@ -94,9 +93,6 @@
     <text x="775" y="208" fill="url(#cyanPink)" stroke="#E0F2FE" stroke-width="1.5" font-size="66" filter="url(#glow)">SAI SRINIVAS</text>
     <text x="775" y="272" fill="#F8FAFC" font-size="57" letter-spacing="7">PATIBANDLA</text>
     <rect x="430" y="292" width="690" height="3" fill="url(#cyanPink)" opacity=".8"/>
-    <rect x="420" y="190" width="720" height="70" fill="url(#sweep)" opacity=".15">
-      <animate attributeName="x" values="380;780;1180;380" dur="4.2s" repeatCount="indefinite"/>
-    </rect>
   </g>
   <text x="775" y="327" text-anchor="middle" fill="#CBD5E1" font-family="monospace" font-size="16" letter-spacing="6">SOFTWARE DEVELOPER</text>
 </g>
