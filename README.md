@@ -3,7 +3,7 @@
 <img
   src="./assets/neon-developer-banner.gif"
   width="96%"
-  alt="Sai Srinivas Patibandla animated developer banner"/>
+  alt="Sai Srinivas Patibandla avatar-integrated animated developer banner"/>
 
 <p align="center">
 <strong>⚡ Building real projects · 🧠 AI/ML · 🛠️ Full-Stack · ☁️ Backend & Cloud</strong>
