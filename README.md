@@ -2,12 +2,8 @@
 
 <img
   src="./assets/neon-developer-banner.gif"
-  width="96%"
+  width="100%"
   alt="Sai Srinivas Patibandla avatar-integrated animated developer banner"/>
-
-<p align="center">
-<strong>⚡ Building real projects · 🧠 AI/ML · 🛠️ Full-Stack · ☁️ Backend & Cloud</strong>
-</p>
 
 </div>
 
@@ -27,9 +23,9 @@
 </tr>
 </table>
 
-<h3 align="center">Full-Stack Developer · Backend Engineer · AI/ML Builder</h3>
+<h3 align="center">Full-Stack Developer · AI/ML · Backend & Cloud</h3>
 
-</div>
+
 
 ---
 
