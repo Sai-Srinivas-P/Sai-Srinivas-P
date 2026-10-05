@@ -1,7 +1,7 @@
 <div align="center">
 
 <img
-  src="./assets/neon-developer-banner-v2.svg"
+  src="./assets/neon-developer-banner.gif"
   width="96%"
   alt="Sai Srinivas Patibandla animated developer banner"/>
 
