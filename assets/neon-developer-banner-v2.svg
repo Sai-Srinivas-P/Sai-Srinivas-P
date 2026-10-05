@@ -58,7 +58,7 @@
   <circle cx="154" cy="150" r="132" fill="#020617" stroke="#22D3EE" stroke-width="3" opacity=".95"/>
   <circle cx="154" cy="150" r="128" fill="none" stroke="#C084FC" stroke-width="2" stroke-dasharray="12 9" filter="url(#profileGlow)"><animateTransform attributeName="transform" type="rotate" from="0 154 150" to="360 154 150" dur="10s" repeatCount="indefinite"/></circle>
   <g clip-path="url(#profileClip)" transform-origin="154 150">
-    <image x="30" y="26" width="248" height="248" preserveAspectRatio="xMidYMid slice" href="https://raw.githubusercontent.com/saisrinivas-p/saisrinivas-p/main/assets/OFFICE_LOOK_1.png">
+    <image x="30" y="26" width="248" height="248" preserveAspectRatio="xMidYMid slice" href="https://raw.githubusercontent.com/saisrinivas-p/saisrinivas-p/main/assets/OFFICE.png">
       <animateTransform attributeName="transform" type="scale" values="1;1.018;1" dur="4.5s" repeatCount="indefinite"/>
     </image>
     <rect x="30" y="26" width="248" height="248" fill="none" stroke="#22D3EE" stroke-opacity=".16" stroke-width="8"/>
