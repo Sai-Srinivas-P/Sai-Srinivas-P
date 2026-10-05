@@ -86,22 +86,18 @@ def main() -> None:
             )
         overlay = Image.alpha_composite(overlay, arc_layer)
 
-        # Moving scanline.
-        y = int(30 + phase * (HEIGHT - 60))
+        # Keep the subtle title shimmer, but remove the full-width scanline
+        # that sweeps vertically across the banner.
         draw = ImageDraw.Draw(overlay)
-        draw.rectangle(
-            (18, y, WIDTH - 18, y + 1),
-            fill=(103, 232, 249, 80),
-        )
-
-        # Tiny moving accent on the title region.
         x = int(400 + phase * 420)
         draw.rectangle((x, 188, x + 70, 190), fill=(255, 255, 255, 48))
 
+        # Use the full GIF palette so the illustrated avatar keeps cleaner
+        # facial edges and gradients after animation quantization.
         frame = Image.alpha_composite(frame, overlay).convert(
             "P",
             palette=Image.Palette.ADAPTIVE,
-            colors=128,
+            colors=256,
         )
         frames.append(frame)
 
