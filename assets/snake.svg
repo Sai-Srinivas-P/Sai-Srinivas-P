@@ -133,7 +133,7 @@
 .c51_6 { animation:kc51_6 9.3s linear infinite; }
 @keyframes kc52_0 { 0.0% { fill:#39d353; } 54.789% { fill:#39d353; } 54.839% { fill:#b7ffd0; } 55.914% { fill:#8affc1; } 59.14% { fill:#39d353; } 65.541% { fill:#39d353; } 65.591% { fill:#161b22; } 100% { fill:#161b22; } }
 .c52_0 { animation:kc52_0 9.3s linear infinite; }
-@keyframes kc52_1 { 0.0% { fill:#0e4429; } 53.713% { fill:#0e4429; } 53.763% { fill:#b7ffd0; } 54.839% { fill:#8affc1; } 58.065% { fill:#39d353; } 64.46600000000001% { fill:#39d353; } 64.516% { fill:#161b22; } 100% { fill:#161b22; } }
+@keyframes kc52_1 { 0.0% { fill:#006d32; } 53.713% { fill:#006d32; } 53.763% { fill:#b7ffd0; } 54.839% { fill:#8affc1; } 58.065% { fill:#39d353; } 64.46600000000001% { fill:#39d353; } 64.516% { fill:#161b22; } 100% { fill:#161b22; } }
 .c52_1 { animation:kc52_1 9.3s linear infinite; }
 @keyframes m1 { 0% { opacity:0; } 0.0% { opacity:1; } 44.086% { opacity:0; } 100% { opacity:0; } }
 .m1 { animation:m1 9.3s steps(1,end) infinite; }
@@ -518,7 +518,7 @@
   <rect class="c51_5" x="730" y="96" width="11" height="11" rx="2.5" fill="#0e4429"/>
   <rect class="c51_6" x="730" y="110" width="11" height="11" rx="2.5" fill="#006d32"/>
   <rect class="c52_0" x="744" y="26" width="11" height="11" rx="2.5" fill="#39d353"/>
-  <rect class="c52_1" x="744" y="40" width="11" height="11" rx="2.5" fill="#0e4429"/>
+  <rect class="c52_1" x="744" y="40" width="11" height="11" rx="2.5" fill="#006d32"/>
   <text class="lab" x="16" y="14">oct</text>
   <text class="lab" x="72" y="14">nov</text>
   <text class="lab" x="142" y="14">dec</text>
@@ -540,13 +540,13 @@
   <rect x="679" y="132" width="11" height="11" rx="2.5" fill="#39d353"/>
   <text class="lab" x="701" y="141">more</text>
   <text class="lab" x="16" y="141">$ commits eaten:</text>
-  <text class="cnt m1" opacity="0" x="118" y="141">18/81</text>
-  <text class="cnt m2" opacity="0" x="118" y="141">27/81</text>
-  <text class="cnt m3" opacity="0" x="118" y="141">31/81</text>
-  <text class="cnt m4" opacity="0" x="118" y="141">32/81</text>
-  <text class="cnt m5" opacity="0" x="118" y="141">47/81</text>
-  <text class="cnt m6" opacity="0" x="118" y="141">51/81</text>
-  <text class="cnt m7" opacity="0" x="118" y="141">72/81</text>
-  <text class="cnt m8" opacity="0" x="118" y="141">81/81</text>
+  <text class="cnt m1" opacity="0" x="118" y="141">18/84</text>
+  <text class="cnt m2" opacity="0" x="118" y="141">27/84</text>
+  <text class="cnt m3" opacity="0" x="118" y="141">31/84</text>
+  <text class="cnt m4" opacity="0" x="118" y="141">32/84</text>
+  <text class="cnt m5" opacity="0" x="118" y="141">47/84</text>
+  <text class="cnt m6" opacity="0" x="118" y="141">54/84</text>
+  <text class="cnt m7" opacity="0" x="118" y="141">75/84</text>
+  <text class="cnt m8" opacity="0" x="118" y="141">84/84</text>
   <rect x="1" y="1" width="769" height="149" rx="12" fill="none" stroke="#30363d"/>
 </svg>
