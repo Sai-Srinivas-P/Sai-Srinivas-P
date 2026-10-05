@@ -1,8 +1,15 @@
 <div align="center">
 
-<img src="./assets/OFFICE_LOOK_1.png" width="320" alt="Sai Srinivas Patibandla"/>
+<img
+  src="./assets/neon-developer-banner-v2.svg"
+  width="96%"
+  alt="Sai Srinivas Patibandla animated developer banner"/>
 
-<p align="center"><strong>⚡ Building real projects · 🧠 AI/ML · 🛠️ Full-Stack · ☁️ Backend & Cloud</strong></p>
+<p align="center">
+<strong>⚡ Building real projects · 🧠 AI/ML · 🛠️ Full-Stack · ☁️ Backend & Cloud</strong>
+</p>
+
+</div>
 
 <table align="center">
 <tr>
