@@ -13,223 +13,169 @@ FRAME_COUNT = 12
 FRAME_DURATION_MS = 120
 
 
-def load_font(size: int, bold: bool = False) -> ImageFont.FreeTypeFont:
-    candidates = (
-        [
-            "/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf",
-            "/usr/share/fonts/truetype/liberation2/LiberationSans-Bold.ttf",
-        ]
+def font(size, bold=False):
+    paths = (
+        ["/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf"]
         if bold
-        else [
-            "/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf",
-            "/usr/share/fonts/truetype/liberation2/LiberationSans-Regular.ttf",
-        ]
+        else ["/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf"]
     )
-    for path in candidates:
-        if Path(path).is_file():
-            return ImageFont.truetype(path, size)
+    for p in paths:
+        if Path(p).exists():
+            return ImageFont.truetype(p, size)
     return ImageFont.load_default()
 
 
-def fit_avatar(photo: Image.Image) -> Image.Image:
-    # Crop the source photo to a clean square, then mask it into the banner avatar.
-    return ImageOps.fit(
-        photo.convert("RGBA"),
-        (260, 260),
-        method=Image.Resampling.LANCZOS,
-        centering=(0.5, 0.5),
-    )
+def avatar_image():
+    src = Image.open(PHOTO_PATH).convert("RGBA")
+    src = ImageOps.fit(src, (270, 270), method=Image.Resampling.LANCZOS, centering=(0.5, 0.5))
+
+    # Circular crop with a very clean edge.
+    mask = Image.new("L", src.size, 0)
+    ImageDraw.Draw(mask).ellipse((2, 2, 268, 268), fill=255)
+    src.putalpha(mask)
+    return src
 
 
-def draw_frame(avatar: Image.Image, frame_index: int) -> Image.Image:
-    phase = frame_index / FRAME_COUNT
-    image = Image.new("RGBA", (WIDTH, HEIGHT), (6, 10, 28, 255))
-    draw = ImageDraw.Draw(image)
+def rounded_panel(draw, box, radius=14, fill=(7, 13, 34, 235), outline=(80, 110, 190, 130), width=1):
+    draw.rounded_rectangle(box, radius=radius, fill=fill, outline=outline, width=width)
 
-    # Outer dashboard frame.
-    draw.rounded_rectangle(
-        (18, 18, WIDTH - 18, HEIGHT - 18),
-        radius=28,
-        fill=(10, 16, 42, 255),
-        outline=(45, 212, 191, 120),
-        width=2,
-    )
-    draw.rounded_rectangle(
-        (32, 32, WIDTH - 32, HEIGHT - 32),
-        radius=22,
-        outline=(76, 100, 180, 70),
-        width=1,
-    )
 
-    # Static technical grid. It never sweeps or moves.
-    for x in range(60, WIDTH, 80):
-        draw.line((x, 45, x, HEIGHT - 45), fill=(70, 90, 150, 24), width=1)
-    for y in range(60, HEIGHT, 50):
-        draw.line((45, y, WIDTH - 45, y), fill=(70, 90, 150, 20), width=1)
+def build_frame(avatar, i):
+    phase = i / FRAME_COUNT
+    t = phase * math.tau
 
-    # Browser-style header.
-    draw.rounded_rectangle(
-        (48, 44, 280, 72),
-        radius=10,
-        fill=(5, 9, 24, 220),
-    )
-    draw.ellipse((60, 53, 68, 61), fill=(248, 113, 113, 220))
-    draw.ellipse((78, 53, 86, 61), fill=(250, 204, 21, 220))
-    draw.ellipse((96, 53, 104, 61), fill=(74, 222, 128, 220))
-    draw.text(
-        (118, 49),
-        "SAI.DEV  /  PROFILE",
-        font=load_font(12),
-        fill=(118, 146, 190, 230),
-    )
+    img = Image.new("RGBA", (WIDTH, HEIGHT), (4, 7, 22, 255))
+    draw = ImageDraw.Draw(img)
 
-    # Avatar glow.
-    cx, cy = 190, 205
-    pulse = 0.5 + 0.5 * math.sin(phase * 2 * math.pi)
-    glow = Image.new("RGBA", (WIDTH, HEIGHT), (0, 0, 0, 0))
-    glow_draw = ImageDraw.Draw(glow)
-    for radius, alpha in (
-        (146, int(30 + 35 * pulse)),
-        (138, int(45 + 45 * pulse)),
-    ):
-        glow_draw.ellipse(
-            (cx - radius, cy - radius, cx + radius, cy + radius),
-            outline=(34, 211, 238, alpha),
-            width=7,
-        )
-    image = Image.alpha_composite(image, glow.filter(ImageFilter.GaussianBlur(10)))
-    draw = ImageDraw.Draw(image)
+    # Deep layered HUD background.
+    draw.rectangle((0, 0, WIDTH, HEIGHT), fill=(5, 8, 27, 255))
+    for n in range(7):
+        y0 = 25 + n * 57
+        draw.line((35, y0, WIDTH - 35, y0), fill=(62, 83, 145, 22), width=1)
+    for n in range(15):
+        x0 = 35 + n * 82
+        draw.line((x0, 25, x0, HEIGHT - 25), fill=(62, 83, 145, 18), width=1)
 
-    # Integrated avatar.
-    mask = Image.new("L", (260, 260), 0)
-    ImageDraw.Draw(mask).ellipse((3, 3, 257, 257), fill=255)
-    avatar_layer = avatar.copy()
-    avatar_layer.putalpha(mask)
-    image.alpha_composite(avatar_layer, (cx - 130, cy - 130))
-    draw = ImageDraw.Draw(image)
+    # Large static neon corner accents. No sweeping lines.
+    accents = Image.new("RGBA", (WIDTH, HEIGHT), (0, 0, 0, 0))
+    ad = ImageDraw.Draw(accents)
+    ad.arc((18, 15, 180, 177), 200, 292, fill=(34, 211, 238, 130), width=3)
+    ad.arc((1020, 220, 1190, 390), 20, 112, fill=(167, 139, 250, 120), width=3)
+    ad.line((40, 105, 40, 55, 115, 55), fill=(34, 211, 238, 150), width=2)
+    ad.line((1160, 345, 1160, 295, 1085, 345), fill=(167, 139, 250, 130), width=2)
+    img = Image.alpha_composite(img, accents)
 
-    # Rotating segmented ring. This is the only moving geometry around the avatar.
-    ring_box = (cx - 145, cy - 145, cx + 145, cy + 145)
-    start_angle = phase * 360
-    for segment in range(12):
-        a0 = start_angle + segment * 30 + 4
-        a1 = a0 + 14
-        color = (34, 211, 238, 235) if segment % 2 == 0 else (167, 139, 250, 235)
-        draw.arc(ring_box, a0, a1, fill=color, width=5)
+    draw = ImageDraw.Draw(img)
 
-    # Ground shadow under the avatar.
-    draw.ellipse(
-        (cx - 130, cy + 115, cx + 130, cy + 137),
-        fill=(0, 0, 0, 70),
-    )
+    # Top browser/header chrome.
+    rounded_panel(draw, (38, 28, 1162, 68), 12, (4, 8, 24, 235), (69, 88, 150, 100))
+    for x, c in ((55, (248, 113, 113, 230)), (72, (250, 204, 21, 230)), (89, (74, 222, 128, 230))):
+        draw.ellipse((x, 42, x + 8, 50), fill=c)
+    draw.text((112, 38), "SAI.DEV  /  PORTFOLIO  /  MAIN", font=font(11), fill=(105, 130, 177, 230))
+    draw.text((1010, 38), "LIVE PROFILE", font=font(10, True), fill=(100, 124, 170, 220))
+
+    # Avatar zone: integrated into a dedicated HUD module.
+    cx, cy = 190, 220
+    halo = Image.new("RGBA", (WIDTH, HEIGHT), (0, 0, 0, 0))
+    hd = ImageDraw.Draw(halo)
+    pulse = 0.55 + 0.45 * math.sin(t)
+    for r, a, w in ((154, int(22 + 28 * pulse), 16), (146, int(35 + 45 * pulse), 7)):
+        hd.ellipse((cx-r, cy-r, cx+r, cy+r), outline=(34, 211, 238, a), width=w)
+    img = Image.alpha_composite(img, halo.filter(ImageFilter.GaussianBlur(9)))
+    draw = ImageDraw.Draw(img)
+
+    # Avatar frame and portrait.
+    draw.ellipse((cx-140, cy-140, cx+140, cy+140), fill=(3, 7, 20, 255), outline=(35, 55, 105, 220), width=2)
+    img.alpha_composite(avatar, (cx-135, cy-135))
+
+    # Rotating segmented ring, deliberately confined around the portrait.
+    ring_box = (cx-151, cy-151, cx+151, cy+151)
+    start = (phase * 360) % 360
+    for seg in range(16):
+        a0 = start + seg * 22.5 + 5
+        a1 = a0 + 12
+        col = (34, 211, 238, 245) if seg % 2 == 0 else (167, 139, 250, 235)
+        draw.arc(ring_box, a0, a1, fill=col, width=4)
+
+    # Small avatar HUD labels.
+    rounded_panel(draw, (54, 336, 326, 370), 9, (4, 9, 25, 230), (50, 211, 238, 100))
+    draw.ellipse((68, 348, 76, 356), fill=(74, 222, 128, 255))
+    draw.text((87, 342), "AVAILABLE TO BUILD", font=font(12, True), fill=(171, 221, 231, 240))
 
     # Main identity block.
+    draw.text((382, 101), "HELLO, I'M", font=font(16, True), fill=(118, 143, 190, 235))
     draw.text(
-        (380, 92),
+        (380, 126),
         "SAI SRINIVAS",
-        font=load_font(52, True),
+        font=font(48, True),
         fill=(103, 232, 249, 255),
-        stroke_width=2,
-        stroke_fill=(13, 30, 65, 255),
+        stroke_width=1,
+        stroke_fill=(8, 20, 48, 255),
     )
-    draw.text(
-        (382, 150),
-        "PATIBANDLA",
-        font=load_font(46, True),
-        fill=(245, 247, 255, 255),
-    )
-    draw.text(
-        (384, 214),
-        "FULL-STACK DEVELOPER  |  AI/ML  |  BACKEND & CLOUD",
-        font=load_font(17, True),
-        fill=(163, 180, 210, 255),
-    )
+    draw.text((382, 178), "PATIBANDLA", font=font(44, True), fill=(246, 247, 255, 255))
+    draw.text((384, 230), "FULL-STACK  •  AI/ML  •  BACKEND  •  CLOUD", font=font(14, True), fill=(155, 177, 214, 245))
 
-    # Terminal panel.
-    draw.rounded_rectangle(
-        (820, 78, 1142, 180),
-        radius=14,
-        fill=(4, 8, 24, 235),
-        outline=(61, 89, 156, 150),
-        width=2,
-    )
-    draw.text(
-        (842, 96),
-        "> developer --live",
-        font=load_font(16),
-        fill=(103, 232, 249, 240),
-    )
-    draw.text(
-        (842, 122),
-        "> Build    Learn",
-        font=load_font(14),
-        fill=(148, 163, 184, 240),
-    )
-    draw.text(
-        (842, 146),
-        "> Solve    Grow",
-        font=load_font(14),
-        fill=(148, 163, 184, 240),
-    )
+    # Minimal animated status pulse, not a line.
+    status = 0.5 + 0.5 * math.sin(t + 0.8)
+    draw.ellipse((386, 270, 396, 280), fill=(74, 222, 128, int(120 + 135 * status)))
+    draw.text((407, 266), "SYSTEM ONLINE", font=font(12, True), fill=(113, 226, 170, 230))
+    draw.text((535, 266), "BUILD  •  SHIP  •  SCALE", font=font(12), fill=(100, 124, 170, 220))
 
-    # Skill cards.
-    badges = [
-        ("FULL-STACK", (103, 232, 249)),
+    # Terminal window.
+    rounded_panel(draw, (790, 86, 1140, 192), 14, (3, 7, 22, 242), (69, 96, 160, 150), 2)
+    draw.text((812, 101), "developer --live", font=font(14, True), fill=(103, 232, 249, 240))
+    draw.text((812, 126), "> Build    ✓", font=font(13), fill=(151, 170, 207, 235))
+    draw.text((812, 149), "> Solve    ✓", font=font(13), fill=(151, 170, 207, 235))
+    draw.text((1010, 126), "> Learn    ✓", font=font(13), fill=(151, 170, 207, 235))
+    draw.text((1010, 149), "> Grow     ✓", font=font(13), fill=(151, 170, 207, 235))
+
+    # Technology cards on the right.
+    cards = [
+        ("FULL-STACK", (34, 211, 238)),
         ("AI / ML", (167, 139, 250)),
         ("BACKEND", (74, 222, 128)),
+        ("CLOUD", (251, 191, 36)),
     ]
-    y = 238
-    for label, color in badges:
-        draw.rounded_rectangle(
-            (820, y, 1142, y + 38),
-            radius=10,
-            fill=(5, 10, 28, 220),
-            outline=(*color, 180),
-            width=1,
-        )
-        draw.ellipse((836, y + 14, 844, y + 22), fill=(*color, 240))
-        draw.text(
-            (858, y + 8),
-            label,
-            font=load_font(14, True),
-            fill=(225, 232, 245, 245),
-        )
-        y += 45
+    y = 210
+    for label, col in cards:
+        rounded_panel(draw, (790, y, 1140, y + 35), 9, (4, 9, 25, 235), (*col, 145), 1)
+        draw.ellipse((807, y + 13, 815, y + 21), fill=(*col, 240))
+        draw.text((831, y + 7), label, font=font(12, True), fill=(226, 233, 246, 245))
+        y += 41
 
-    # Blinking live-status dot.
-    status_alpha = int(90 + 165 * (0.5 + 0.5 * math.sin(phase * 2 * math.pi + 1)))
-    draw.ellipse((1122, 52, 1132, 62), fill=(74, 222, 128, status_alpha))
+    # Bottom data readout, static except for tiny status dots.
+    rounded_panel(draw, (380, 302, 752, 370), 12, (4, 9, 25, 230), (61, 86, 148, 110))
+    draw.text((402, 315), "PIPELINE", font=font(10, True), fill=(95, 119, 166, 220))
+    draw.text((402, 337), "CODE  →  TEST  →  DEPLOY", font=font(13, True), fill=(202, 214, 237, 235))
+    for j in range(3):
+        a = int(110 + 120 * (0.5 + 0.5 * math.sin(t + j)))
+        draw.ellipse((628 + j * 25, 339, 636 + j * 25, 347), fill=(103, 232, 249, a))
 
-    # Tiny ambient particles. No sweeping line, scanline, or title band.
-    for particle in range(8):
-        px = 360 + (particle * 97) % 760
-        py = 330 + int(8 * math.sin(phase * 2 * math.pi + particle))
-        alpha = 80 + int(
-            70 * (0.5 + 0.5 * math.sin(phase * 2 * math.pi + particle))
-        )
-        draw.ellipse((px, py, px + 3, py + 3), fill=(103, 232, 249, alpha))
+    # A few tiny particles near the bottom. They drift only a few pixels, never across the title.
+    for j in range(9):
+        px = 350 + j * 85
+        py = 385 + int(3 * math.sin(t + j))
+        draw.ellipse((px, py, px + 3, py + 3), fill=(103, 232, 249, 90))
 
-    return image
+    return img
 
 
-def main() -> None:
+def main():
     if not PHOTO_PATH.is_file():
-        raise FileNotFoundError(f"Missing profile photo: {PHOTO_PATH}")
+        raise FileNotFoundError(PHOTO_PATH)
 
-    avatar = fit_avatar(Image.open(PHOTO_PATH))
-    frames = [draw_frame(avatar, index) for index in range(FRAME_COUNT)]
-
-    # 256 colors per frame keeps the integrated avatar sharper than the old 128-color GIF.
-    paletted = [
-        frame.convert("P", palette=Image.Palette.ADAPTIVE, colors=256)
-        for frame in frames
+    avatar = avatar_image()
+    frames = [build_frame(avatar, i) for i in range(FRAME_COUNT)]
+    frames = [
+        f.convert("P", palette=Image.Palette.ADAPTIVE, colors=256)
+        for f in frames
     ]
 
     OUT_PATH.parent.mkdir(parents=True, exist_ok=True)
-    paletted[0].save(
+    frames[0].save(
         OUT_PATH,
         save_all=True,
-        append_images=paletted[1:],
+        append_images=frames[1:],
         duration=FRAME_DURATION_MS,
         loop=0,
         disposal=2,
