@@ -1,0 +1,40 @@
+name: Build profile banner GIF
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build-banner:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install image dependencies
+        run: python -m pip install --upgrade pip pillow cairosvg
+
+      - name: Build animated banner
+        run: python scripts/build_banner_gif.py
+
+      - name: Commit generated GIF
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add assets/neon-developer-banner.gif
+          if git diff --cached --quiet; then
+            echo "Banner unchanged"
+            exit 0
+          fi
+          git commit -m "chore: build animated profile banner [skip ci]"
+          git push
