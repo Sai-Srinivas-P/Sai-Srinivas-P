@@ -18,7 +18,7 @@ FRAME_DURATION_MS = 120
 
 PHOTO_URL = (
     "https://raw.githubusercontent.com/"
-    "saisrinivas-p/saisrinivas-p/main/assets/OFFICE.png"
+    "saisrinivas-p/saisrinivas-p/main/assets/DEVELOPER.png"
 )
 
 
