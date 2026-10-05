@@ -1,4 +1,5 @@
 name: Build profile banner GIF
+# Source image: assets/DEVELOPER.png
 
 on:
   push:
