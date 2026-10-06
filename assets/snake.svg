@@ -117,8 +117,6 @@
 .c50_5 { animation:kc50_5 9.2s linear infinite; }
 @keyframes kc50_6 { 0.0% { fill:#161b22; } 51.037000000000006% { fill:#161b22; } 51.087% { fill:#b7ffd0; } 52.174% { fill:#8affc1; } 55.435% { fill:#39d353; } 58.646% { fill:#39d353; } 58.696% { fill:#161b22; } 100% { fill:#161b22; } }
 .c50_6 { animation:kc50_6 9.2s linear infinite; }
-@keyframes kc51_1 { 0.0% { fill:#161b22; } 68.428% { fill:#161b22; } 68.478% { fill:#b7ffd0; } 69.565% { fill:#8affc1; } 72.826% { fill:#39d353; } 79.348% { fill:#26a641; } 91.304% { fill:#006d32; } 100% { fill:#006d32; } }
-.c51_1 { animation:kc51_1 9.2s linear infinite; }
 @keyframes kc51_2 { 0.0% { fill:#006d32; } 67.34100000000001% { fill:#006d32; } 67.391% { fill:#b7ffd0; } 68.478% { fill:#8affc1; } 71.739% { fill:#39d353; } 78.261% { fill:#26a641; } 90.217% { fill:#006d32; } 100% { fill:#006d32; } }
 .c51_2 { animation:kc51_2 9.2s linear infinite; }
 @keyframes kc51_3 { 0.0% { fill:#0e4429; } 66.254% { fill:#0e4429; } 66.304% { fill:#b7ffd0; } 67.391% { fill:#8affc1; } 70.652% { fill:#39d353; } 77.174% { fill:#26a641; } 89.13% { fill:#006d32; } 100% { fill:#006d32; } }
@@ -129,10 +127,12 @@
 .c51_5 { animation:kc51_5 9.2s linear infinite; }
 @keyframes kc51_6 { 0.0% { fill:#0e4429; } 49.95% { fill:#0e4429; } 50.0% { fill:#b7ffd0; } 51.087% { fill:#8affc1; } 54.348% { fill:#39d353; } 57.559000000000005% { fill:#39d353; } 57.609% { fill:#161b22; } 100% { fill:#161b22; } }
 .c51_6 { animation:kc51_6 9.2s linear infinite; }
-@keyframes kc52_0 { 0.0% { fill:#26a641; } 70.602% { fill:#26a641; } 70.652% { fill:#b7ffd0; } 71.739% { fill:#8affc1; } 75.0% { fill:#39d353; } 81.522% { fill:#26a641; } 93.478% { fill:#006d32; } 100% { fill:#006d32; } }
+@keyframes kc52_0 { 0.0% { fill:#006d32; } 70.602% { fill:#006d32; } 70.652% { fill:#b7ffd0; } 71.739% { fill:#8affc1; } 75.0% { fill:#39d353; } 81.522% { fill:#26a641; } 93.478% { fill:#006d32; } 100% { fill:#006d32; } }
 .c52_0 { animation:kc52_0 9.2s linear infinite; }
 @keyframes kc52_1 { 0.0% { fill:#39d353; } 69.515% { fill:#39d353; } 69.565% { fill:#b7ffd0; } 70.652% { fill:#8affc1; } 73.913% { fill:#39d353; } 80.435% { fill:#26a641; } 92.391% { fill:#006d32; } 100% { fill:#006d32; } }
 .c52_1 { animation:kc52_1 9.2s linear infinite; }
+@keyframes kc52_2 { 0.0% { fill:#161b22; } 68.428% { fill:#161b22; } 68.478% { fill:#b7ffd0; } 69.565% { fill:#8affc1; } 72.826% { fill:#39d353; } 79.348% { fill:#26a641; } 91.304% { fill:#006d32; } 100% { fill:#006d32; } }
+.c52_2 { animation:kc52_2 9.2s linear infinite; }
 @keyframes m1 { 0% { opacity:0; } 0.0% { opacity:1; } 44.565% { opacity:0; } 100% { opacity:0; } }
 .m1 { animation:m1 9.2s steps(1,end) infinite; }
 @keyframes m2 { 0% { opacity:0; } 44.565% { opacity:1; } 48.913% { opacity:0; } 100% { opacity:0; } }
@@ -157,7 +157,6 @@
   <rect class="c0_3" x="16" y="68" width="11" height="11" rx="2.5" fill="#161b22"/>
   <rect class="c0_4" x="16" y="82" width="11" height="11" rx="2.5" fill="#161b22"/>
   <rect class="c0_5" x="16" y="96" width="11" height="11" rx="2.5" fill="#161b22"/>
-  <rect class="c0_6" x="16" y="110" width="11" height="11" rx="2.5" fill="#161b22"/>
   <rect class="c1_0" x="30" y="26" width="11" height="11" rx="2.5" fill="#161b22"/>
   <rect class="c1_1" x="30" y="40" width="11" height="11" rx="2.5" fill="#161b22"/>
   <rect class="c1_2" x="30" y="54" width="11" height="11" rx="2.5" fill="#161b22"/>
@@ -515,8 +514,9 @@
   <rect class="c51_4" x="730" y="82" width="11" height="11" rx="2.5" fill="#161b22"/>
   <rect class="c51_5" x="730" y="96" width="11" height="11" rx="2.5" fill="#0e4429"/>
   <rect class="c51_6" x="730" y="110" width="11" height="11" rx="2.5" fill="#0e4429"/>
-  <rect class="c52_0" x="744" y="26" width="11" height="11" rx="2.5" fill="#26a641"/>
+  <rect class="c52_0" x="744" y="26" width="11" height="11" rx="2.5" fill="#006d32"/>
   <rect class="c52_1" x="744" y="40" width="11" height="11" rx="2.5" fill="#39d353"/>
+  <rect class="c52_2" x="744" y="54" width="11" height="11" rx="2.5" fill="#161b22"/>
   <text class="lab" x="16" y="14">oct</text>
   <text class="lab" x="72" y="14">nov</text>
   <text class="lab" x="142" y="14">dec</text>
@@ -538,13 +538,13 @@
   <rect x="679" y="132" width="11" height="11" rx="2.5" fill="#39d353"/>
   <text class="lab" x="701" y="141">more</text>
   <text class="lab" x="16" y="141">$ commits eaten:</text>
-  <text class="cnt m1" opacity="0" x="118" y="141">18/117</text>
-  <text class="cnt m2" opacity="0" x="118" y="141">27/117</text>
-  <text class="cnt m3" opacity="0" x="118" y="141">31/117</text>
-  <text class="cnt m4" opacity="0" x="118" y="141">40/117</text>
-  <text class="cnt m5" opacity="0" x="118" y="141">41/117</text>
-  <text class="cnt m6" opacity="0" x="118" y="141">56/117</text>
-  <text class="cnt m7" opacity="0" x="118" y="141">96/117</text>
-  <text class="cnt m8" opacity="0" x="118" y="141">117/117</text>
+  <text class="cnt m1" opacity="0" x="118" y="141">18/127</text>
+  <text class="cnt m2" opacity="0" x="118" y="141">27/127</text>
+  <text class="cnt m3" opacity="0" x="118" y="141">31/127</text>
+  <text class="cnt m4" opacity="0" x="118" y="141">40/127</text>
+  <text class="cnt m5" opacity="0" x="118" y="141">41/127</text>
+  <text class="cnt m6" opacity="0" x="118" y="141">56/127</text>
+  <text class="cnt m7" opacity="0" x="118" y="141">106/127</text>
+  <text class="cnt m8" opacity="0" x="118" y="141">127/127</text>
   <rect x="1" y="1" width="769" height="149" rx="12" fill="none" stroke="#30363d"/>
 </svg>
