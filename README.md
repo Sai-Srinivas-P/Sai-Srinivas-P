@@ -235,6 +235,23 @@
 
 # 🚀 Featured Projects
 
+## 🔬 ATLAS RESEARCH AI — Local-First Research Workspace
+
+**Python · FastAPI · Next.js · React · TypeScript · LangGraph · LM Studio · Qdrant · FastEmbed · Docker**
+
+A local-first AI workspace that brings conversational chat, evidence-driven research, and private-document retrieval into one application. It uses models served through LM Studio, with optional web search and a private document knowledge base.
+
+- 🧠 **Structured research pipeline:** plans questions, gathers web and document evidence, critiques evidence gaps, synthesizes an answer, and checks the result with LangGraph
+- 📚 **Private-document RAG:** ingests PDF, TXT, and Markdown files, creates embeddings with FastEmbed, and retrieves relevant passages from Qdrant
+- 🌐 **Evidence-aware answers:** combines available web results and private-document matches, returning source details with research reports
+- 🏠 **Local-first model inference:** connects to locally served models through LM Studio’s OpenAI-compatible API
+- 🧪 **API and quality checks:** FastAPI endpoints for chat, research, document management, and health checks, with automated tests and Docker Compose support
+
+🔗 **[Repository →](https://github.com/Sai-Srinivas-P/ATLAS-RESEARCH-AI)**
+
+---
+
+
 ## 🏥 CARE-MIND — AI Healthcare Platform
 
 **C# · .NET 10 · ASP.NET Core Web API · Entity Framework Core · SQL Server · JWT · OpenAI API · Docker · CI/CD**
