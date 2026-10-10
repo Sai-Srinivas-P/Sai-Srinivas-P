@@ -235,22 +235,7 @@
 
 # 🚀 Featured Projects
 
-## 🔬 ATLAS RESEARCH AI — Local-First Research Workspace
-
-**Python · FastAPI · Next.js · React · TypeScript · LangGraph · LM Studio · Qdrant · FastEmbed · Docker**
-
-A local-first AI workspace that brings conversational chat, evidence-driven research, and private-document retrieval into one application. It uses models served through LM Studio, with optional web search and a private document knowledge base.
-
-- 🧠 **Structured research pipeline:** plans questions, gathers web and document evidence, critiques evidence gaps, synthesizes an answer, and checks the result with LangGraph
-- 📚 **Private-document RAG:** ingests PDF, TXT, and Markdown files, creates embeddings with FastEmbed, and retrieves relevant passages from Qdrant
-- 🌐 **Evidence-aware answers:** combines available web results and private-document matches, returning source details with research reports
-- 🏠 **Local-first model inference:** connects to locally served models through LM Studio’s OpenAI-compatible API
-- 🧪 **API and quality checks:** FastAPI endpoints for chat, research, document management, and health checks, with automated tests and Docker Compose support
-
-🔗 **[Repository →](https://github.com/Sai-Srinivas-P/ATLAS-RESEARCH-AI)**
-
----
-
+### 🟣 .NET Projects (2)
 
 ## 🏥 CARE-MIND — AI Healthcare Platform
 
@@ -281,6 +266,8 @@ A desktop application for managing academic records through a structured Windows
 
 ---
 
+### ☕ Java Projects (2)
+
 ## 🎓 EduPortfolio Vision Hub
 
 **Spring Boot · Spring Security · Hibernate · MySQL · JSP · JSTL · HTML · CSS · Bootstrap · React · Maven**
@@ -293,22 +280,6 @@ A role-based student portfolio platform focused on secure access, project tracki
 - 🧭 **30% lower navigation time** across key workflows with responsive UI and optional React integration
 
 🔗 **[Repository →](https://github.com/Sai-Developer-1405/EDUPORTFOLIO-VISION-HUB)**
-
----
-
-## 🚗 Automotive Anomaly Detection System
-
-**Python · Scikit-learn · Pandas · NumPy · Matplotlib · Tkinter · KNN · Decision Tree · SVM · Genetic Algorithm · CAN Bus Data**
-
-A machine-learning workflow for detecting anomalies in automotive CAN bus data with model comparison and feature selection.
-
-- 📦 **14,000 CAN bus records** across **7 key attributes**
-- 🧪 **80:20 train-test split** for model evaluation
-- 🤖 Compared **3 ML algorithms:** KNN, Decision Tree, and SVM
-- 🧬 Applied **Genetic Algorithm-based feature selection**
-- 📈 Evaluated results using **accuracy, precision, recall/miss-rate, and confusion-matrix analysis** through a custom GUI for dataset processing, model execution, and visualization
-
-🔗 **[Repository →](https://github.com/Sai-Developer-1405/AUTOMOTIVE-ANOMALY-DETECTION-SYSTEM)**
 
 ---
 
@@ -328,19 +299,37 @@ A full-stack movie ticket booking application that combines a Spring Boot backen
 
 ---
 
-## ⛓️ Blockchain Donation Framework
+### 🤖 AI Projects (2)
 
-**HTML · CSS · JavaScript · Node.js · Express.js · Ethereum · Solidity · Smart Contracts · IPFS · Web3.js · Truffle · Ganache**
+## 🚗 Automotive Anomaly Detection System
 
-A decentralized organ-donation management concept focused on transparency, tamper resistance, and secure donor/recipient workflows.
+**Python · Scikit-learn · Pandas · NumPy · Matplotlib · Tkinter · KNN · Decision Tree · SVM · Genetic Algorithm · CAN Bus Data**
 
-- 🌐 **Decentralized architecture** designed to reduce dependence on a central authority
-- 📜 **Smart contracts** for donor registration, recipient verification, and organ-matching logic
-- 🔒 **Data integrity and tamper resistance** through blockchain-backed records
-- ⚡ **Real-time verification** of donor and recipient information
-- 🧩 Uses **IPFS** for decentralized storage with Ethereum tooling for local smart-contract development
+A machine-learning workflow for detecting anomalies in automotive CAN bus data with model comparison and feature selection.
 
-🔗 **[Repository →](https://github.com/Sai-Developer-1405/BLOCKCHAIN-DONATION-FRAMEWORK)**
+- 📦 **14,000 CAN bus records** across **7 key attributes**
+- 🧪 **80:20 train-test split** for model evaluation
+- 🤖 Compared **3 ML algorithms:** KNN, Decision Tree, and SVM
+- 🧬 Applied **Genetic Algorithm-based feature selection**
+- 📈 Evaluated results using **accuracy, precision, recall/miss-rate, and confusion-matrix analysis** through a custom GUI for dataset processing, model execution, and visualization
+
+🔗 **[Repository →](https://github.com/Sai-Developer-1405/AUTOMOTIVE-ANOMALY-DETECTION-SYSTEM)**
+
+---
+
+## 🔬 ATLAS RESEARCH AI — Local-First Research Workspace
+
+**Python · FastAPI · Next.js · React · TypeScript · LangGraph · LM Studio · Qdrant · FastEmbed · Docker**
+
+A local-first AI workspace that brings conversational chat, evidence-driven research, and private-document retrieval into one application. It uses models served through LM Studio, with optional web search and a private document knowledge base.
+
+- 🧠 **Structured research pipeline:** plans questions, gathers web and document evidence, critiques evidence gaps, synthesizes an answer, and checks the result with LangGraph
+- 📚 **Private-document RAG:** ingests PDF, TXT, and Markdown files, creates embeddings with FastEmbed, and retrieves relevant passages from Qdrant
+- 🌐 **Evidence-aware answers:** combines available web results and private-document matches, returning source details with research reports
+- 🏠 **Local-first model inference:** connects to locally served models through LM Studio’s OpenAI-compatible API
+- 🧪 **API and quality checks:** FastAPI endpoints for chat, research, document management, and health checks, with automated tests and Docker Compose support
+
+🔗 **[Repository →](https://github.com/Sai-Srinivas-P/ATLAS-RESEARCH-AI)**
 
 ---
 
